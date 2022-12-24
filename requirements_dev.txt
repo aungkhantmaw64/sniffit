@@ -1,0 +1,7 @@
+autopep8
+typing-extensions
+pytest
+pytest-cov
+flake8
+mypy
+tox
