@@ -3,3 +3,7 @@ venv
 .pytest_cache
 .coverage
 src/hybrid_enose.egg-info
+src/models/__pycache__
+tests/__pycache__
+tests/support/__pycache__
+assets
