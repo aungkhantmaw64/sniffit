@@ -7,3 +7,4 @@ src/models/__pycache__
 tests/__pycache__
 tests/support/__pycache__
 assets
+.tox
