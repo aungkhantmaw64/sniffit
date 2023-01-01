@@ -1,7 +1,6 @@
 import pytest
-import os
 from unittest import mock
-from models.sample_reader import HybridEnoseSampleReader, HybridEnosePathChecker
+from models.sample_reader import DefaultPathChecker
 from support.expecteds import (EXPECTED_SAMPLE_PATH,
                                CORRECT_SAMPLE_STRUCTURE,
                                EXPECTED_IMAGES_PATH,
@@ -9,13 +8,8 @@ from support.expecteds import (EXPECTED_SAMPLE_PATH,
 
 
 @pytest.fixture
-def sample_reader():
-    return HybridEnoseSampleReader()
-
-
-@pytest.fixture
 def sample_path_checker():
-    return HybridEnosePathChecker()
+    return DefaultPathChecker()
 
 
 @mock.patch(target="os.listdir",
@@ -25,7 +19,7 @@ def sample_path_checker():
                 CORRECT_SAMPLE_STRUCTURE])
 def test_CheckSamplePath_PathHasCorrectStructure(mock_listdir, sample_path_checker):
 
-    assert sample_path_checker.isSample(path="..\\data\\raw_samples\\Acetone")
+    assert sample_path_checker.isValid(path="..\\data\\raw_samples\\Acetone")
 
     mock_listdir.assert_has_calls([
         mock.call.listdir(EXPECTED_SAMPLE_PATH),

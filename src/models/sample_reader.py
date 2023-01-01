@@ -17,7 +17,7 @@ import os
 class SamplePathChecker(ABC):
 
     @abstractmethod
-    def isSample(self, path: str) -> bool:
+    def isValid(self, path: str) -> bool:
         pass
 
 
@@ -28,7 +28,7 @@ class SampleReader(ABC):
         pass
 
 
-class HybridEnosePathChecker(SamplePathChecker):
+class DefaultPathChecker(SamplePathChecker):
 
     def __hasCsvFile(self, path: str) -> bool:
         """This private helper method checks
@@ -66,7 +66,7 @@ class HybridEnosePathChecker(SamplePathChecker):
                         return True
         return False
 
-    def isSample(self, path: str) -> bool:
+    def isValid(self, path: str) -> bool:
         """This method checks if the given path is a valid sample directory according to HybridEnose's Rules.
 
         Args:
@@ -76,9 +76,3 @@ class HybridEnosePathChecker(SamplePathChecker):
             bool: True if the sample directory is valid, False otherwise.
         """
         return (self.__hasImageFolder(path) and self.__hasCsvFile(path))
-
-
-class HybridEnoseSampleReader(SampleReader):
-
-    def read(self, path: str) -> Dict[str, str]:
-        pass
