@@ -5,6 +5,8 @@ WORKDIR /app
 RUN apt-get update -y && apt-get install -y \
     python3 python3-pip python3-setuptools git
 
+COPY ./assets/fonts/ /usr/share/fonts
+
 COPY ./requirements.txt /app
 
 COPY ./requirements_dev.txt /app

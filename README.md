@@ -4,12 +4,17 @@ This repository contains analytics for the experimental ordor dataset I created 
 
 ## Building the Docker Image
 ```bash
-docker build --progres tty -t data-analysis-ci:latest .
+docker build --progress tty -t data-analysis-ci:latest .
 ```
 
 ## Running the Container
 
 ### Windows (Powershell)
 ```bash
-docker container run --name data_analysis_ci --rm -it -v $PWD:/app data-analysis-ci:latest bash
+docker container run -p 8888:8888 --name data_analysis_ci --rm -it -v ${pwd}:/app data-analysis-ci:latest bash
+```
+
+## Running Jupyter Notebook
+```bash
+jupyter notebook --allow-root --ip 0.0.0.0 --port 8888
 ```
