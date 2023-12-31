@@ -1,4 +1,7 @@
-numpy
-sklearn
 dash
+numpy
+matplotlib
+opencv-python-headless
 pandas
+seaborn
+sklearn
