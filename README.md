@@ -1,5 +1,5 @@
 # SniffIt-AI
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aungkhantmaw64/SniffIt-ai/revival)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aungkhantmaw64/SniffIt-ai/main)
 
 ## Introduction
 This repository contains analytics for the experimental ordor dataset I created using the hybrid-electronic nose designed as an aiding device for non-invasive diaganosis. I published an IEEE research article as a main author based on this device and the code used for the analytics of the dataset can be found in this repo. For the published article, please refer to https://ieeexplore.ieee.org/document/9495905.
